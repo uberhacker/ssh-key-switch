@@ -1,6 +1,9 @@
 ## ssh-key-switch
 Switch ssh key pairs on the fly
 
+### Motivation
+If you work on a lot of projects in different hosting environments, there are potentially several ssh key pairs you need to manage for each of these environmennts.  Some cloud hosts, such as platform.sh, only allow you one ssh key pair regardless of the number of accounts you log in to use.  To make matters worse, you cannot use the key pair on different accounts.  This means you need a separate key pair for each account.  Switching between environments requires that the ssh private key change locally to access each account.  This script helps make it easier to perform this switch.
+
 ### Installation
 ```bash
 $ git clone git@github.com:uberhacker/ssh-key-switch.git
