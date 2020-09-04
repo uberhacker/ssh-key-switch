@@ -1,0 +1,17 @@
+#!/bin/bash
+if ! test $1; then
+  echo "Switch ssh keypairs"
+  echo "Usage: ssh-key-switch acquia|local|pantheon|plaform"
+  exit 1
+fi
+VALID=
+VALID_SWITCHES="acquia local pantheon platform"
+for S in $VALID_SWITCHES; do
+  [ $1 == $S ] && VALID=1
+done
+cd $HOME/.ssh
+[ ! -f $1.id_rsa ] && echo "$HOME/.ssh/$1.id_rsa file not found." && exit 1
+[ ! -f $1.id_rsa.pub ] && echo "$HOME/.ssh/$1.id_rsa.pub file not found." && exit 1
+cp $1.id_rsa id_rsa
+cp $1.id_rsa.pub id_rsa.pub
+[ -f $1.id_rsa.ppk ] && cp $1.id_rsa.ppk id_rsa.ppk
