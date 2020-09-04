@@ -20,4 +20,5 @@ $ cp id_rsa <name>.id_rsa
 $ cp id_rsa.pub <name>.id_rsa.pub
 ```
 If `<name>` is `local`, then to switch keys, type `ssh-key-switch local`.
-This will copy all the keys named `<name>.id_rsa*` to `id_rsa*`.
+
+This will copy all the keys named `local.id_rsa*` to `id_rsa*`.
